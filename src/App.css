@@ -1,18 +1,21 @@
-.appWrap {
+.app-wrapper {
   display: grid;
   grid-template-areas:
     "header header header"
-    "navbar profile find"
-    "footer profile find";
-  grid-template-rows: 60px 1fr 60px;
-  grid-template-columns: 20% 1fr 30%;
+    "navbar content ava"
+    "navbar content footer";
+  grid-template-rows: 80px 1fr 80px;
+  grid-template-columns: 15% 1fr 34%;
   grid-gap: 10px;
   height: 100vh;
   margin: 0;
-  background-color: black;
-
 }
-
+.app-wrapper-content {
+  margin: 5px;
+  border-radius: 15px;
+  grid-area: content;
+  background-color: rgba(217, 235, 56, 0.5);
+}
 
 
 

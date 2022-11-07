@@ -1,46 +1,36 @@
-import React, {ChangeEvent} from 'react';
-import s from './Dialogs.module.scss'
-import {DialogUser} from "./DialogUser/DialogUser";
-import {MessagesUser} from "./MessageUser/MessagesUser";
-import {AllActionType, dataUsersType, DialogsMessagesType} from "../../../Types/types";
-import {addMessActionCreator, updateNewMessTextActionCreator} from "../../../redux/dialogPageReducer";
+import React from 'react';
+import {connect} from "react-redux";
+import {Dispatch} from "redux";
+import {AppRootState} from "../../../redux/reduxStore";
+import {addMesageTextAC, changeMessageTextAC, DialogsPageType} from "../../../redux/dialogPageReducer";
+import Dialogs from "./Dialogs";
 
-type PropsType = {
-    dataUsers: Array<dataUsersType>
-    dataMessage: Array<DialogsMessagesType>
-    // addMess: (newDialogText: string) => void
-    newDialogText: string
-    // updateNewMessText: (newMessText: string) => void
-    dispatch: (action: AllActionType) => void
+
+type MapStateToPropsType = {
+    DialogsPage: DialogsPageType
 }
-export function Dialogs(props: PropsType) {
-    let addMess = () => {
-            // props.addMess(props.newDialogText)
-            // props.dispatch({type: "ADD-MESS", newDialogText: props.newDialogText})
-        props.dispatch(addMessActionCreator(props.newDialogText))
-    }
-    let onChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
 
-            // props.updateNewMessText(event.currentTarget.value)
-            // props.dispatch({type: "UPDATE-NEW-MESS-TEXT", newMessText: event.currentTarget.value})
-        props.dispatch(updateNewMessTextActionCreator(event.currentTarget.value))
-    }
-
-    return (
-        <div className={s.dialogs}>
-            <div className={s.dialogItem}>
-               <DialogUser dataUsers={props.dataUsers}/>
-            </div>
-            <div className={s.messages}>
-               <MessagesUser dataMessage={props.dataMessage}/>
-            </div>
-            <div>
-                <div><textarea
-                               value={props.newDialogText}
-                               onChange={onChange}
-                ></textarea></div>
-                <div><button onClick={addMess}>add message</button></div>
-            </div>
-        </div>
-    )
+type MapDispatchToPropsType = {
+    changeTextMessageHandler: (newText: string) => void;
+    addMessageTextHandler: () => void;
 }
+
+let mapStateToProps = (state: AppRootState): MapStateToPropsType => {
+    return {
+        DialogsPage: state.DialogsPage
+    }
+}
+
+let mapDispatchToProps = (dispatch: Dispatch): MapDispatchToPropsType => {
+    return {
+        changeTextMessageHandler: (newText: string) => {
+            dispatch(changeMessageTextAC(newText))
+        },
+        addMessageTextHandler: () => {
+            dispatch(addMesageTextAC())
+        }
+    }
+}
+
+export const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(Dialogs)
+

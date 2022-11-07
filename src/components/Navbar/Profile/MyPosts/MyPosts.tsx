@@ -1,23 +1,54 @@
-import React from 'react';
+import React, {ChangeEvent, createRef} from 'react';
 import s from './MyPosts.module.scss'
-import {NewPost} from "./NewPost/NewPost";
-import {Post} from "./Post/Post";
+import Post from "./Post/Post";
 
-export function MyPosts() {
+type ProfilePageType = {
+    posts: Array<PostType>
+    textPost: string
+    addPost: () => void
+    changeNewPostTextHandler: (text: string) => void
+}
+
+type PostType = {
+    id: number
+    message: string
+    likesCount: number
+}
+
+
+const MyPosts = (props: ProfilePageType) => {
+
+    const newPostElement = createRef<HTMLTextAreaElement>()
+
+    const addPostHandler = () => {
+        if (newPostElement.current) {
+            props.addPost()
+        }
+    }
+
+    const changeNewPostTextHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+        let text = e.currentTarget.value;
+        props.changeNewPostTextHandler(text)
+    }
+
     return (
-        <div className={s.myPosts}>
+        <div className={s.postsBlock}>
+            <h3>My posts</h3>
             <div>
-                <h1>My posts</h1>
                 <div>
-                    <NewPost/>
+                    <textarea onChange={changeNewPostTextHandler} value={props.textPost} ref={newPostElement}></textarea>
                 </div>
                 <div>
-                    <Post message={'Hello, have are you?'}
-                          id={1}
-                          likesCount={5}
-                    />
+                    <button onClick={addPostHandler}>add post</button>
                 </div>
             </div>
+            <div className={s.posts}>
+                {props.posts.map(postItem => {
+                    return <Post key={postItem.id} message={postItem.message} likesCount={postItem.likesCount}/>
+                })}
+            </div>
         </div>
-    )
-}
+    );
+};
+
+export default MyPosts;

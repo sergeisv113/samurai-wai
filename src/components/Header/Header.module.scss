@@ -1,6 +1,24 @@
+:global {
+  body[data-theme='light'] {
+    --header-bg: var(--white);
+    --header-shadow: var(--shadow);
+    --header-color: var(--gray-300);
+  }
+
+  body[data-theme='dark'] {
+    --header-bg: var(--gray-400);
+    --header-shadow: unset;
+    --header-color: var(--white);
+  }
+}
+
 .header {
   margin: 5px;
   border-radius: 15px;
   grid-area: header;
-  background-color: blueviolet;
+  background-color: var(--header-bg);
+  box-shadow: var(--header-shadow);
+  color: var(--header-color);
+
+  //background-color: rgba(238, 36, 111, 0.5);
 }

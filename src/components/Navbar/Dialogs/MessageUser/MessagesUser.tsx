@@ -1,15 +1,17 @@
 import React from 'react';
-import s from "../Dialogs.module.scss";
 
-type DialogsMessagesType = {
-    id: number
-    message: string
+type MessageItemType = {
+    id?: number;
+    message: string;
 }
-export function MessagesUser(props: DialogsMessagesType) {
+
+const Message = (props: MessageItemType) => {
 
     return (
         <div>
-            <div key={props.id} className={s.message}>{props.message}</div>
+            <div>{props.message}</div>
         </div>
     )
 }
+
+export default Message;

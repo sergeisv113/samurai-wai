@@ -1,6 +1,18 @@
 .navbar {
-  margin: 5px;
+  padding: 35px;
   border-radius: 15px;
   grid-area: navbar;
-  background-color: #2be2b7;
+  background-color: rgba(43, 226, 183, 0.5);
 }
+  .item a {
+    line-height: 1.5;
+    color: #ffffff;
+    font-size: 30px;
+    text-decoration: none;
+  }
+
+.item a.active {
+    color: black;
+  font-size: 40px;
+  font-weight: bold ;
+  }

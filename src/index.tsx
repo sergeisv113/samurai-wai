@@ -1,9 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import {AppPropsType, state} from "./redux/state";
-import {renderT} from "./redux/render";
+import ReactDOM from "react-dom";
+import App from "./App";
+import {Provider} from "react-redux";
+import {store} from "./redux/reduxStore";
 
-
-renderT(state)
+export const rerenderEntireTree = () => {
+    ReactDOM.render(
+        <Provider store={store}><App/></Provider>,
+        document.getElementById('root')
+    );
+}
+rerenderEntireTree()

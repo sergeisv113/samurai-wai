@@ -1,4 +1,5 @@
-import styles from './Button.module.scss';
+import s from './Button.module.scss';
+import React from "react";
 
 interface ButtonProps {
   children: string,
@@ -6,7 +7,7 @@ interface ButtonProps {
 }
 
 export const Button = ({ children, onClick }: ButtonProps) => (
-  <button className={styles.button} onClick={onClick}>
+  <button className={s.button} onClick={onClick}>
     {children}
   </button>
 );

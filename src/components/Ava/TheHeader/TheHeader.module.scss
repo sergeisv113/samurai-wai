@@ -1,10 +1,10 @@
 :global {
   body[data-theme='light'] {
-    --header-color: var(--gray-300);
+    --headeTr-color: var(--gray-300);
   }
 
   body[data-theme='dark'] {
-    --header-color: var(--white);
+    --headerT-color: var(--white);
   }
 }
 
@@ -16,7 +16,7 @@
 }
 
 .logo {
-  color: var(--header-color);
+  color: var(--headerT-color);
   font-size: 1.75rem;
   line-height: 1.5;
   font-weight: 700;

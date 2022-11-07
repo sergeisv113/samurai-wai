@@ -1,6 +1,19 @@
-.header {
-  margin: 5px;
-  border-radius: 15px;
-  grid-area: header;
-  background-color: blueviolet;
+.dialogs {
+ display: grid;
+ grid-template-columns: 2fr 10fr;
+}
+.dialogItem {
+  padding: 10px;
+}
+.dialogItem .active{
+  color: aquamarine;
+}
+.dialog {
+  padding: 10px;
+}
+.messages {
+  padding: 10px;
+}
+.message {
+  padding: 10px;
 }

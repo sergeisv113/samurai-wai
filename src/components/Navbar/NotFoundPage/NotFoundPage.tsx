@@ -5,6 +5,7 @@ export function NotFoundPage() {
     return (
         <div className={s.notFoundPage}>
             Page 404
+            <img src={require('./../../../img/404.jpg')} alt=""/>
         </div>
     )
 }

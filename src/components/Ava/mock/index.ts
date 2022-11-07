@@ -1,14 +1,14 @@
-import { LocalGithubUser } from 'types';
+import { LocalGithubUser } from './../../../Types/user';
 
 export const defaultUser: LocalGithubUser = {
-  "login": "michey85",
-  "avatar": "https://avatars.githubusercontent.com/u/36237995?v=4",
-  "name": "Mikhail Nepomnyashchiy",
-  "company": "EPAM",
-  "blog": "mishanep.com",
-  "location": "Malaga",
-  "bio": "React/Vue developer",
-  "twitter": "pcgramota",
+  "login": "sergeisv113",
+  "avatar": "https://avatars.githubusercontent.com/u/90547803?v=4",
+  "name": "Sergei Strilets",
+  "company": "IT-Incubator",
+  "blog": "heliga.com.ua",
+  "location": "Charkow",
+  "bio": "React developer",
+  "twitter": "sergei113",
   "repos": 60,
   "followers": 184,
   "following": 5,

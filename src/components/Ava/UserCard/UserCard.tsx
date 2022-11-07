@@ -1,25 +1,25 @@
-import { UserInfo } from 'components/UserInfo';
-import { UserStat } from 'components/UserStat';
-import { UserTitle } from 'components/UserTitle';
-import { LocalGithubUser } from 'types';
-import styles from './UserCard.module.scss';
+import { LocalGithubUser } from './../../../Types/user';
+import s from './UserCard.module.scss';
+import {UserTitle} from "../UserTitle/UserTitle";
+import {UserStat} from "../UserStat/UserStat";
+import {UserInfo} from "../UserInfo/UserInfo";
 
-interface UserCardProps extends LocalGithubUser { }
+export interface UserCardProps extends LocalGithubUser { }
 
 export const UserCard = (props: UserCardProps) => {
   return (
-    <div className={styles.userCard}>
+    <div className={s.userCard}>
       <img
         src={props.avatar}
         alt={props.login}
-        className={styles.avatar}
+        className={s.avatar}
       />
       <UserTitle
         created={props.created}
         login={props.login}
         name={props.name}
       />
-      <p className={`${styles.bio}${props.bio ? '' : ` ${styles.empty}`}`}>
+      <p className={`${s.bio}${props.bio ? '' : ` ${s.empty}`}`}>
         {props.bio || 'This profile has no bio'}
       </p>
       <UserStat

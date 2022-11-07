@@ -1,10 +1,10 @@
-import { ThemeSwitcher } from 'components/ThemeSwitcher'
 
-import styles from './TheHeader.module.scss';
+import s from './TheHeader.module.scss';
+import {ThemeSwitcher} from "../ThemeSwitcher/ThemeSwitcher";
 
 export const TheHeader = () => (
-  <div className={styles.header}>
-    <div className={styles.logo}>
+  <div className={s.header}>
+    <div className={s.logo}>
       devfinder
     </div>
     <ThemeSwitcher />
