@@ -3,7 +3,7 @@ import './App.css';
 import {Header} from "./components/Header/Header";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Footer} from "./components/Footer/Footer";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { Route, Routes} from "react-router-dom";
 import {Profile} from "./components/Navbar/Profile/Profile";
 import {News} from "./components/Navbar/News/News";
 import {Friends} from "./components/Navbar/Friends/Friends";
@@ -15,7 +15,6 @@ import {DialogsContainer} from "./components/Navbar/Dialogs/DialogsContainer";
 const App: React.FC = () => {
 
     return (
-        <BrowserRouter>
            <div className={'app-wrapper'}>
                <Header/>
                <Navbar/>
@@ -33,7 +32,6 @@ const App: React.FC = () => {
                <Ava/>
                <Footer/>
            </div>
-        </BrowserRouter>
     );
 }
 export default App;

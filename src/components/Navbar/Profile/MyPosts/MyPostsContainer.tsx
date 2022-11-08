@@ -19,7 +19,7 @@ type mapDispatchToPropsType = {
 
 const mapStateToProps = (state: AppRootState): mapStateToPropsType => {
     return {
-        posts: state.ProfilePage.Posts,
+        posts: state.ProfilePage.posts,
         textPost: state.ProfilePage.textPost
     }
 }
