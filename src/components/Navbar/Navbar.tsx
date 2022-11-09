@@ -17,7 +17,7 @@ export function Navbar() {
                     <NavLink to={'/news'}  className={({isActive}) => isActive ? s.active : ''}>News</NavLink>
                 </div>
                 <div className={s.item}>
-                    <NavLink to={'/friends'}  className={({isActive}) => isActive ? s.active : ''}>Friends</NavLink>
+                    <NavLink to={'/users'}  className={({isActive}) => isActive ? s.active : ''}>Friends</NavLink>
                 </div>
                 <div className={s.item}>
                     <NavLink to={'/music'}  className={({isActive}) => isActive ? s.active : ''}>Music</NavLink>

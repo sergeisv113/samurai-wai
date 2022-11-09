@@ -1,7 +1,7 @@
 import { combineReducers, createStore} from "redux";
-import UsersReducer from "./siteBarReducer";
 import { ProfileReducer} from "./profilePageReducer";
 import {DialogsReducer} from "./dialogPageReducer";
+import {UsersReducer} from "./usersPageReducer";
 
 const rootReducer = combineReducers({
 

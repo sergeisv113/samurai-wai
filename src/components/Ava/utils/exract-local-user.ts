@@ -1,16 +1,16 @@
-import { GithubUser, LocalGithubUser } from './../../../Types/user';
+import { GithubUser, LocalGithubUser } from '../../../Types/userGit';
 
-export const extractLocalUser = (user: GithubUser): LocalGithubUser => ({
-  login: user.login,
-  avatar: user.avatar_url,
-  name: user.name,
-  bio: user.bio,
-  blog: user.blog,
-  company: user.company,
-  created: user.created_at,
-  followers: user.followers,
-  following: user.following,
-  location: user.location,
-  repos: user.public_repos,
-  twitter: user.twitter_username,
+export const extractLocalUser = (userGit: GithubUser): LocalGithubUser => ({
+  login: userGit.login,
+  avatar: userGit.avatar_url,
+  name: userGit.name,
+  bio: userGit.bio,
+  blog: userGit.blog,
+  company: userGit.company,
+  created: userGit.created_at,
+  followers: userGit.followers,
+  following: userGit.following,
+  location: userGit.location,
+  repos: userGit.public_repos,
+  twitter: userGit.twitter_username,
 });

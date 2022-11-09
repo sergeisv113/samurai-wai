@@ -1,4 +1,4 @@
-import { LocalGithubUser } from './../../../Types/user';
+import { LocalGithubUser } from '../../../Types/userGit';
 import s from './UserCard.module.scss';
 import {UserTitle} from "../UserTitle/UserTitle";
 import {UserStat} from "../UserStat/UserStat";
