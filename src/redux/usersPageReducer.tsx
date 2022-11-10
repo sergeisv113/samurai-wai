@@ -12,19 +12,20 @@ type setUsersACType = ReturnType<typeof setUsersAC>
 
 export type UserType = {
     id: number,
-    photoUrl: string,
+    photos: {small: string, large: string}
     followed: boolean,
-    fullName: string,
+    name: string,
+    uniqueUrlName: string
     status: string,
     location: {country: string, city: string}
 }
 
 const initialState = {
     users: [
-        {id: 1, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVX9gs9cJfYpN9OOGOqRnHfhwk8qcGxL1SBg&usqp=CAU',  followed: false, fullName: 'Dmitry K', status: 'I am a boss', location: {country: 'Belarus', city: 'Minsk'} },
+       /* {id: 1, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVX9gs9cJfYpN9OOGOqRnHfhwk8qcGxL1SBg&usqp=CAU',  followed: false, fullName: 'Dmitry K', status: 'I am a boss', location: {country: 'Belarus', city: 'Minsk'} },
         {id: 2, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVX9gs9cJfYpN9OOGOqRnHfhwk8qcGxL1SBg&usqp=CAU',  followed: true, fullName: 'Sergey D', status: 'My positive', location: {country: 'Ukraine', city: 'Kiev'} },
         {id: 3, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVX9gs9cJfYpN9OOGOqRnHfhwk8qcGxL1SBg&usqp=CAU',  followed: true, fullName: 'Anna', status: 'I lowe world', location: {country: 'Russian', city: 'Moscow'} },
-        {id: 4, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVX9gs9cJfYpN9OOGOqRnHfhwk8qcGxL1SBg&usqp=CAU',  followed: false, fullName: 'Taras C', status: 'Hello post', location: {country: 'Belarus', city: 'Minsk'} },
+        {id: 4, photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVX9gs9cJfYpN9OOGOqRnHfhwk8qcGxL1SBg&usqp=CAU',  followed: false, fullName: 'Taras C', status: 'Hello post', location: {country: 'Belarus', city: 'Minsk'} },*/
     ] as Array<UserType>
 }
 export type InitialStateType = typeof initialState
